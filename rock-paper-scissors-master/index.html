@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Mustapha Mukhtar">
   <meta name="description" property="og:description" content="A single page website that displays information on countries around the world.">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/rock-paper-scissors-master/images/logo.svg">
   <link rel="stylesheet" href="style.css">
 
   <title>Frontend Mentor | Rock, Paper, Scissors</title>
@@ -28,37 +28,35 @@
     </div>
 
     <div class="play-elements">
-     <div class="triangle">
-       <img src="/rock-paper-scissors-master/images/bg-triangle.svg" alt="background triangle image">
-     </div>
-     <div class="top">
-       <div class="paper">
-         <img src="/rock-paper-scissors-master/images/icon-paper.svg" alt="paper image">
-       </div>
-       <div class="scissors">
-         <img src="/rock-paper-scissors-master/images/icon-scissors.svg" alt="scissors image">
-       </div>
-     </div>
-     <div class="bottom">
-       <div class="rock">
-         <img src="/rock-paper-scissors-master/images/icon-rock.svg" alt="rock image">
-       </div>
-     </div>
+      <div class="triangle">
+        <img src="/rock-paper-scissors-master/images/bg-triangle.svg" alt="background triangle image">
+      </div>
+      <div class="top">
+        <div class="paper">
+          <img src="/rock-paper-scissors-master/images/icon-paper.svg" alt="paper image">
+        </div>
+        <div class="scissors">
+          <img src="/rock-paper-scissors-master/images/icon-scissors.svg" alt="scissors image">
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="rock">
+          <img src="/rock-paper-scissors-master/images/icon-rock.svg" alt="rock image">
+        </div>
+      </div>
     </div>
 
+    <div class="rules-button">
+      <button type="submit">Rules</button>
+    </div>
+  </div>
 
-
-    Score
-    Rules
-
-    You Picked
-    The House Picked
-
-    You Win
-    You Lose
-
-    Play Again
-
+  <div id="rules-modal" class="modal">
+    <div class="modal-content">
+      <p id="rules-title">rules</p>
+      <img id="rules-image" src="/rock-paper-scissors-master/images/image-rules.svg" alt="rules" />
+      <img id="close-icon" src="/rock-paper-scissors-master/images/icon-close.svg" alt="close" />
+    </div>
   </div>
 
   <div class="attribution">
