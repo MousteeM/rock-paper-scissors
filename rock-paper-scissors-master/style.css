@@ -31,7 +31,8 @@ body {
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))
+  background-image: linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%));
+  font-family: "Barlow Semi Condensed";
 }
 
 /*
@@ -92,14 +93,14 @@ h6 {
 
 /* score container  */
 .top-content {
-  border: solid hsl(217, 16%, 45%) 2px;
-  border-radius: 0.3rem;
+  border: solid hsl(217, 16%, 45%) 3px;
+  border-radius: 0.35rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1rem 1rem 1.5rem;
-  outline: white dashed 1px;
+  /* outline: white dashed 1px; */
 }
 
 .top-left {
@@ -111,6 +112,8 @@ h6 {
 .top-left>p {
   text-transform: uppercase;
   color: whitesmoke;
+  font-weight: 700;
+  font-size: 1.5rem;
 }
 
 .score-container {
@@ -119,10 +122,23 @@ h6 {
   padding: 0.5rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
+  text-align: center;
+  width: 95px;
 }
+
+.score-container>p:nth-child(1) {
+  color: hsl(229, 25%, 31%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: .8rem;
+}
+
+.score-container>p:nth-child(2) {
+  color: #333;
+  font-family: 800;
+  font-size: 3rem;
+}
+
 
 .play-elements {
   display: flex;
@@ -180,8 +196,9 @@ h6 {
 }
 
 .rules-button {
-  /* border: yellow 1px dashed; */
+  border: yellow 1px dashed;
   align-self: center;
+  margin-bottom: 4rem; 
 }
 
 .rules-button>button {
@@ -192,7 +209,6 @@ h6 {
   text-transform: uppercase;
   letter-spacing: 1px;
   color: white;
-  margin-bottom: 4rem;
 }
 
 .modal {
@@ -257,6 +273,91 @@ h6 {
 
 #close-icon:hover {
   cursor: pointer;
+}
+
+/* win texts */
+
+#player-pick-container, #house-pick-container {
+  display: none;
+  height: 182px;
+  position: absolute;
+  top: 227px;
+  animation: appear 0.3s linear both;
+}
+
+#player-pick-container {
+  width: 130px;
+  left: 29px;
+}
+
+#house-pick-container {
+    width: 145px;
+    left: 209px;
+}
+
+#house-selection {
+  left: 8px;
+  display: none;
+}
+
+.player-picked-text, .house-picked-text {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.88px;
+  line-height: 32px;
+  text-shadow: 0 3 3 0 hsla(0, 0%, 0%, 0.2);
+  position: absolute;
+  top: 150px;
+}
+
+.player-picked-text {
+  width: 90px;
+  height: 32px;
+  left: 20px;
+}
+
+.house-picked-text {
+  width: 145px;
+  height: 32px;
+}
+
+#win-text, #lose-text, #draw-text {
+  height: 67px;
+  font-size: 56px;
+  position: absolute;
+  top: 471px;
+  display: none;
+}
+
+#win-text {
+  width: 195px;
+  left: 90px;
+}
+
+#lose-text {
+  width: 220px;
+  left: 78px;
+}
+
+#draw-text {
+  width: 135px;
+  left: 125px;
+} 
+#draw-text {
+  width: 135px;
+  left: 125px;
+}
+
+#play-again-button {
+  width: 220px;
+  height: 48px;
+  border-radius: 8px;
+  background: linear-gradient(hsl(0, 0%, 95.3%), hsl(0, 0%, 100%));
+  color: hsl(229, 24.8%, 30.8%);
+  position: absolute;
+  top: 554px;
+  left: 78px;
+  display: none;
 }
 
 attribution .attribution {
