@@ -88,7 +88,7 @@ h6 {
   display: flex;
   flex-direction: column;
   gap: 6rem;
-  border: pink dashed 1px;
+  /* border: pink dashed 1px; */
 }
 
 /* score container  */
@@ -113,7 +113,7 @@ h6 {
   text-transform: uppercase;
   color: whitesmoke;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .score-container {
@@ -146,7 +146,7 @@ h6 {
   align-items: center;
   justify-content: center;
   position: relative;
-  border: green dashed 1px;
+  /* border: green dashed 1px; */
 }
 
 
@@ -154,7 +154,7 @@ h6 {
   width: 65%;
   align-self: center;
   z-index: -1;
-  border: black 1px dashed;
+  /* border: black 1px dashed; */
   position: relative;
 }
 
@@ -172,13 +172,13 @@ h6 {
   display: flex;
   justify-content: space-between;
   width: 70%;
-  border: red 1px dashed;
+  /* border: red 1px dashed; */
   position: absolute;
   top: -1rem;
 }
 
 .bottom {
-  border: black 1px dashed;
+  /* border: black 1px dashed; */
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -196,9 +196,10 @@ h6 {
 }
 
 .rules-button {
-  border: yellow 1px dashed;
+  /* border: yellow 1px dashed; */
   align-self: center;
-  margin-bottom: 4rem; 
+  align-items: center;
+  /* margin-bottom: 4rem;  */
 }
 
 .rules-button>button {
@@ -207,7 +208,7 @@ h6 {
   border: whitesmoke 1px solid;
   border-radius: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   color: white;
 }
 
@@ -277,40 +278,58 @@ h6 {
 
 /* win texts */
 
-#player-pick-container, #house-pick-container {
-  display: none;
-  height: 182px;
+.game-body {
+  position: relative;
+}
+
+.pick-container {
+  border: coral 1px dashed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10%;
   position: absolute;
-  top: 227px;
+  top: 30%;
+  left: 15%;
+  height: 182px;
+  transform: translate(-15%);
+  display: none;
+}
+
+#player-pick-container, #house-pick-container {
+  /* display: none; */
+  /* height: 182px; */
+/*   position: absolute; */
+  /* top: 227px; */
   animation: appear 0.3s linear both;
+  border: green dashed 1px;
 }
 
 #player-pick-container {
-  width: 130px;
-  left: 29px;
+  /* width: 130px; */
+  /* left: 29px; */
 }
 
 #house-pick-container {
-    width: 145px;
-    left: 209px;
+    /* width: 145px;
+    left: 209px; */
 }
 
 #house-selection {
   left: 8px;
-  display: none;
+  /* display: none; */
 }
 
 .player-picked-text, .house-picked-text {
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 700;
-  letter-spacing: 1.88px;
-  line-height: 32px;
+  letter-spacing: 1.4px;
   text-shadow: 0 3 3 0 hsla(0, 0%, 0%, 0.2);
-  position: absolute;
-  top: 150px;
+  color: white;
+  text-transform: uppercase;
+  width: 145px;
 }
 
-.player-picked-text {
+/* .player-picked-text {
   width: 90px;
   height: 32px;
   left: 20px;
@@ -319,45 +338,42 @@ h6 {
 .house-picked-text {
   width: 145px;
   height: 32px;
+} */
+
+.status-text {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 2rem
 }
 
-#win-text, #lose-text, #draw-text {
-  height: 67px;
-  font-size: 56px;
-  position: absolute;
-  top: 471px;
-  display: none;
+.buttons {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  /* border: burlywood 1px dashed; */
+  justify-content: center;
+  align-self: center;
+  align-items: center;
+  margin-top: -5.5rem;
 }
 
-#win-text {
-  width: 195px;
-  left: 90px;
+.play-again {
+  /* border: steelblue 1px dashed; */
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
-#lose-text {
-  width: 220px;
-  left: 78px;
-}
-
-#draw-text {
-  width: 135px;
-  left: 125px;
-} 
-#draw-text {
-  width: 135px;
-  left: 125px;
-}
-
-#play-again-button {
-  width: 220px;
-  height: 48px;
-  border-radius: 8px;
-  background: linear-gradient(hsl(0, 0%, 95.3%), hsl(0, 0%, 100%));
-  color: hsl(229, 24.8%, 30.8%);
-  position: absolute;
-  top: 554px;
-  left: 78px;
-  display: none;
+.play-again-button {
+  text-transform: uppercase;
+  padding: 0.7rem 2.5rem;
+  border-radius: 0.3rem;
+  border: none;
+  letter-spacing: 2px;
+  color: hsl(229, 25%, 31%);
 }
 
 attribution .attribution {

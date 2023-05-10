@@ -26,71 +26,71 @@
       </div>
       <div class="score-container">
         <p>Score</p>
-        <p class="score">12</p>
+        <p class="score">0</p>
       </div>
     </div>
 
-    <div class="play-elements">
-      <div class="triangle">
-        <img src="/rock-paper-scissors-master/images/bg-triangle.svg" alt="background triangle image">
-      </div>
-      <div class="top">
-        <div class="paper">
-          <img src="/rock-paper-scissors-master/images/icon-paper.svg" alt="paper image">
+    <div class="game-body">
+      <div class="play-elements">
+        <div class="triangle">
+          <img src="/rock-paper-scissors-master/images/bg-triangle.svg" alt="background triangle image">
         </div>
-        <div class="scissors">
-          <img src="/rock-paper-scissors-master/images/icon-scissors.svg" alt="scissors image">
+        <div class="top">
+          <div class="paper">
+            <img src="/rock-paper-scissors-master/images/icon-paper.svg" alt="paper image">
+          </div>
+          <div class="scissors">
+            <img src="/rock-paper-scissors-master/images/icon-scissors.svg" alt="scissors image">
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="rock">
+            <img src="/rock-paper-scissors-master/images/icon-rock.svg" alt="rock image">
+          </div>
         </div>
       </div>
-      <div class="bottom">
-        <div class="rock">
-          <img src="/rock-paper-scissors-master/images/icon-rock.svg" alt="rock image">
+
+      <div class="pick-container">
+        <div id="player-pick-container">
+          <p class="player-picked-text">you picked</p>
+          <div id="player-selection" class="circle large">
+            <div class="symbol"></div>
+          </div>
+        </div>
+        <div id="house-pick-container">
+          <p class="house-picked-text">the house picked</p>
+          <div id="placeholder"></div>
+          <div id="house-selection" class="circle large">
+            <div class="symbol"></div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div id="player-pick-container">
-      <p class="player-picked-text">you picked</p>
-      <div id="player-selection" class="circle large">
-        <div class="symbol"></div>
+      <div class="status">
+        <p class="status-text">You Win</p>
       </div>
     </div>
 
-    <div id="house-pick-container">
-      <p class="house-picked-text">the house picked</p>
-      <div id="placeholder"></div>
-      <div id="house-selection" class="circle large">
-        <div class="symbol"></div>
+    <div class="buttons">
+      <div class="play-again">
+        <button type="submit" class="play-again-button">play again</button>
+      </div>
+
+      <div class="rules-button">
+        <button type="submit">Rules</button>
       </div>
     </div>
 
-    <p id="win-text">you win</p>
-    <p id="lose-text">you lose</p>
-    <p id="draw-text">draw</p>
 
-    <div id="play-again-button">
-      <p class="play-again-text">play again</p>
+    <div id="rules-modal" class="modal">
+      <div class="modal-content">
+        <p id="rules-title">rules</p>
+        <img id="rules-image" src="/rock-paper-scissors-master/images/image-rules.svg" alt="rules" />
+        <img id="close-icon" src="/rock-paper-scissors-master/images/icon-close.svg" alt="close" />
+      </div>
     </div>
 
-    <div class="rules-button">
-      <button type="submit">Rules</button>
-    </div>
-
-  </div>
-
-  <div id="rules-modal" class="modal">
-    <div class="modal-content">
-      <p id="rules-title">rules</p>
-      <img id="rules-image" src="/rock-paper-scissors-master/images/image-rules.svg" alt="rules" />
-      <img id="close-icon" src="/rock-paper-scissors-master/images/icon-close.svg" alt="close" />
-    </div>
-  </div>
-
-  <!--  <div class="attribution">
-   Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-   Coded by <a href="#">Your Name Here</a>.
- </div> -->
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
