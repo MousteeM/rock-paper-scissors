@@ -129,33 +129,58 @@ h6 {
   border: green dashed 1px;
 }
 
-/* .play-elements > *:not(.test) {
-  position: absolute;
-} */
-
+ 
 .triangle {
-  /* width: 65%; */
-  align-items: center;
+  width: 65%;
+  align-self: center;
   z-index: -1;
-  border: black 1px dashed
+  border: black 1px dashed;
+  position: relative;
 }
 
 .triangle img {
   justify-self: center;
+    /* position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%); */
+  width: 100%;
+  transition: all 0.5s ease-in-out;
 }
 
 .top {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
   border: red 1px dashed;
+  position: absolute;
+  top: -1rem;
 }
 
 .bottom {
   border: black 1px dashed;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%);
 }
 
-/* attribution */
+.rock, .paper, .scissors {
+  background-color: white;
+  padding: 0.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* .rock {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(50%) rotate(90deg);
+} */
+
+attribution
 .attribution {
   font-size: 11px;
   text-align: center;
