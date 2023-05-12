@@ -200,7 +200,8 @@ h6 {
   height: 90px;
   border-radius: 50%;
   position: relative;
-  box-shadow: 0 6px 0 0 hsl(228, 24%, 78%) inset
+  box-shadow: 0 6px 0 0 hsl(228, 24%, 78%) inset;
+  cursor: pointer;
 }
 
 .paper {
