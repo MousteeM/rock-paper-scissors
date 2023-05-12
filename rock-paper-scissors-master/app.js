@@ -6,6 +6,8 @@ const paper = document.querySelector('.paper')
 const scissors = document.querySelector('.scissors')
 const triangleImage = document.querySelector('.triangle')
 const score = document.querySelector('.score')
+const statusText = document.querySelector('.status-text')
+statusText.style.display = 'none'
 
 // function to randomize computer selection
 const randomChoice = function() {
@@ -30,10 +32,18 @@ function compareChoices(user, computer) {
 }
 
 function updateScore(winner) {
+  console.log('Winner:', winner);
   if(winner === 'user') {
+    statusText.textContent = 'You Win!'
+    statusText.style.display = 'block'
     userScore += 1
   } else if(winner === 'computer' && userScore > 0){
+    statusText.textContent = 'You Lose!'
+    statusText.style.display = 'block'
     userScore -= 1
+  } else if (winner === 'draw'){
+    statusText.textContent = 'Draw!'
+    statusText.style.display = 'block'
   }
   score.textContent = userScore
 }
