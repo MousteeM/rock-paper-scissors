@@ -390,7 +390,9 @@ h6 {
   color: white;
   text-transform: uppercase;
   text-align: center;
-  margin-top: 4rem
+  margin-top: 4rem;
+  /* display: none; */
+  opacity: 1;
 }
 
 .buttons {
