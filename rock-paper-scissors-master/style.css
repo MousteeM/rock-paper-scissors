@@ -202,6 +202,7 @@ h6 {
   position: relative;
   box-shadow: 0 6px 0 0 hsl(228, 24%, 78%) inset;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 
 .paper {
@@ -392,7 +393,7 @@ h6 {
   text-align: center;
   margin-top: 4rem;
   /* display: none; */
-  opacity: 1;
+  opacity: 0;
 }
 
 .buttons {
