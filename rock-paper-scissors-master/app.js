@@ -7,6 +7,9 @@ const scissors = document.querySelector('.scissors')
 const triangleImage = document.querySelector('.triangle')
 const score = document.querySelector('.score')
 const statusText = document.querySelector('.status-text')
+const playAgain = document.querySelector('.play-again')
+
+playAgain.style.opacity = 0
 //statusText.style.display = 'none'
 
 // function to randomize computer selection
@@ -57,111 +60,44 @@ function updateScore(winner) {
   score.textContent = userScore
 }
 
+function switchState(element) {
+  triangleImage.style.opacity = 0
+  playAgain.style.opacity = 1
+  if (element === paper) {
+    scissors.style.display = 'none'
+    rock.style.display = 'none'
+  } else if (element === scissors) {
+    paper.style.display = 'none'
+    rock.style.display = 'none'
+  } else if (element === rock) {
+    scissors.style.display = 'none'
+    paper.style.display = 'none'
+  }
+}
+
 
 function playGame() {
   //add event listener for play buttons
   paper.addEventListener('click', () => {
     const checkWinner = compareChoices('paper', randomChoice())
+    switchState(paper)
     updateScore(checkWinner)
     console.log(checkWinner)
   })
   rock.addEventListener('click', () => {
-    moveElement(rock)
+    //moveElement(rock)
     const checkWinner = compareChoices('rock ', randomChoice())
+    switchState(rock)
     updateScore(checkWinner)
     console.log(checkWinner)
   })
   scissors.addEventListener('click', () => {
-    moveElement(scissors)
+    //moveElement(scissors)
     const checkWinner = compareChoices('scissors', randomChoice())
+    switchState(scissors)
     updateScore(checkWinner)
     console.log(checkWinner)
   })
 }
 
-// function moveElement(element) {
-//   let position = 0
-//   let moveScissors = setInterval(animateScissors, 2)
-//   let moveRock = setInterval(animateRock, 2)
-  
-  
-//   function animateScissors() {
-//     if(position === 177) {
-//       clearInterval(moveScissors)
-//     } else {
-//       position++
-//       element.style.right = `${position}px`
-//     }
-//   }
-//   function animateRock() {
-//     if(position === 2) {
-//       clearInterval(moveRock)
-//     } else {
-//       position++
-//       element.style.bottom = `${position}px`
-//       element.style.right = `${position}px`
-//     }
-//   }
-  
-// }
-
-function moveElement(element) {
-  let position = 0
-  let animateElement = setInterval(animate, 2)
-  
-  function animate() {
-    if(position === 177) {
-      clearInterval(animateElement)
-    } else {
-      position++
-      element.style.right = `${position}px`
-      
-      if (element === rock) {
-        element.style.bottom = `${position}px`
-      }
-    }
-  }
-} 
-
-// function moveElement(element) {
-//   let position = 0;
-//   let animateElement;
-
-//   if (element === 'rock') {
-//     animateElement = setInterval(animateRock, 2);
-//   } else if (element === 'scissors') {
-//     animateElement = setInterval(animateScissors, 2);
-//   }
-
-//   function animateScissors() {
-//     if (position === 177) {
-//       clearInterval(animateElement);
-//     } else {
-//       position++;
-//       element.style.right = `${position}px`;
-//     }
-//   }
-
-//   function animateRock() {
-//     if (position === 177) {
-//       clearInterval(animateElement);
-//     } else {
-//       position++;
-//       element.style.bottom = `${position}px`;
-//       element.style.right = `${position}px`;
-//     }
-//   }
-  
-//   if (element !== 'paper') {
-//     // let triangle = document.getElementById('triangle');
-//     // triangle.style.display = 'none';
-//     element.addEventListener('click', function () {
-//       if (animateElement) clearInterval(animateElement);
-//       let paper = document.getElementById('paper');
-//       paper.style.position = 'relative';
-//       paper.style.right = `${position}px`;
-//       paper.style.bottom = `${position}px`;
-//     });
-//   }
-//} 
 playGame()
