@@ -75,49 +75,6 @@ function switchState(element) {
   }
 }
 
-function moveElement(element) {
-  let position = 0;
-  let animateElement;
-
-  if (element === rock) {
-    animateElement = setInterval(animateRock, 2);
-  } else if (element === scissors) {
-    animateElement = setInterval(animateScissors, 2);
-  }
-
-  function animateScissors() {
-    if (position === 177) {
-      clearInterval(animateElement);
-    } else {
-      position++;
-      element.style.right = `${position}px`;
-    }
-  }
-
-  function animateRock() {
-    if (position === 160) {
-      clearInterval(animateElement);
-    } else {
-      position++;
-      element.style.bottom = `${position}px`;
-      element.style.right = `${position}px`;
-    }
-  }
-
-  if (element !== 'paper') {
-    // let triangle = document.getElementById('triangle');
-    // triangle.style.display = 'none';
-    element.addEventListener('click', function() {
-      if (animateElement) clearInterval(animateElement);
-      let paper = document.getElementById('paper');
-      paper.style.position = 'relative';
-      paper.style.right = `${position}px`;
-      paper.style.bottom = `${position}px`;
-    });
-  }
-}
-
-
 function getDistance(elem1, elem2) {
   const rect1 = elem1.getBoundingClientRect();
   const rect2 = elem2.getBoundingClientRect();
@@ -131,17 +88,50 @@ const distanceRockPaper = getDistance(rock, paper);
 const distanceRockScissors = getDistance(rock, scissors);
 const distancePaperScissors = getDistance(paper, scissors);
 
+// function displayComputerChoice(choice) {
+//   if(choice === 'rock') {
+//     rock.style.opacity = 1
+//   } else if(choice === 'scissors') {
+//     scissors.style.opacity = 1
+//   } else {
+//     paper.style.opacity = 1
+//   }
+//   console.log('hi')
+// }
+
+function displayBothChoices(userChoice, computerChoice) {
+  if(userChoice === 'rock') {
+    rock.style.opacity = 1
+  } else if(userChoice === 'scissors') {
+    scissors.style.opacity = 1
+  } else {
+    paper.style.opacity = 1
+  }
+
+  setTimeout(() => {
+    if(computerChoice === 'rock') {
+      rock.style.opacity = 1
+    } else if(computerChoice === 'scissors') {
+      scissors.style.opacity = 1
+    } else {
+      paper.style.opacity = 1
+    }
+  }, 2000)
+}
 
 function playGame() {
   //add event listener for play buttons
   paper.addEventListener('click', () => {
-    const checkWinner = compareChoices('paper', randomChoice())
+    const computerChoice = randomChoice()
+    const checkWinner = compareChoices('paper', computerChoice)
     switchState(paper)
     updateScore(checkWinner)
+    displayBothChoices('paper', computerChoice)
     console.log(checkWinner)
   })
   rock.addEventListener('click', () => {
-    const checkWinner = compareChoices('rock ', randomChoice())
+    const computerChoice = randomChoice()
+    const checkWinner = compareChoices('rock', computerChoice)
     const rockRect = rock.getBoundingClientRect();
     const paperRect = paper.getBoundingClientRect();
     const distanceX = paperRect.x - rockRect.x;
@@ -150,16 +140,22 @@ function playGame() {
     rock.style.transform = `translate(${distanceX}px, ${distanceY}px)`;
     switchState(rock)
     updateScore(checkWinner)
+    displayBothChoices('rock', computerChoice)
     console.log(checkWinner)
   })
   scissors.addEventListener('click', () => {
-    const checkWinner = compareChoices('scissors', randomChoice())
+    const computerChoice = randomChoice()
+    const checkWinner = compareChoices('scissors', computerChoice)
     scissors.style.transition = 'transform 2'
     scissors.style.translate = `${-distancePaperScissors}px`
     switchState(scissors)
     updateScore(checkWinner)
+    displayBothChoices('scissors', computerChoice)
     console.log(checkWinner)
   })
 }
+
+playGame()
+
 
 playGame()
