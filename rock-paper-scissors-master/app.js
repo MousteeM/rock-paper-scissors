@@ -156,6 +156,3 @@ function playGame() {
 }
 
 playGame()
-
-
-playGame()
